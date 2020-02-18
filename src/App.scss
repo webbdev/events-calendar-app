@@ -1,0 +1,233 @@
+@import "variables.scss";
+
+.wrapper {
+    text-align: center;
+    max-width: 1170px;
+    margin: 0 auto;
+
+    h2 {
+        margin: 20px auto;
+    }
+
+    .wr-row {
+        padding: 0 15px;
+
+        @media screen and (max-width: 1100px) {
+            padding: 0 25px 0 55px;
+        }
+
+        @media screen and (max-width: 768px) {
+            padding: 0 20px 0 55px;
+        }
+
+        @media screen and (max-width: 375px) {
+            padding: 0 15px 0 55px;
+        }
+
+        .schedule-table {
+            position: relative;
+            margin: 30px auto 100px;
+            max-width: 900px;
+
+            table {
+                width: 100%;
+            }
+
+            table, th, td {
+                border-bottom: 1px solid #dadce0;
+                border-collapse: collapse;
+                padding: 0;
+                text-align: left;
+                font-size: 12px;
+                line-height: 1.3;
+                color: $table-text-color;
+            }
+
+            th, td {
+                height: 40px;
+            }
+
+            thead {
+                tr th {
+                    position: relative;
+                    height: 30px;
+                }
+
+                .date {
+                    position: absolute;
+                    color: $table-text-color;
+                    font-size: 13px;
+                    bottom: 10px;
+                }
+            }
+
+            table th:first-child,
+            table td:first-child {
+                position: relative;
+                width: 12px;
+                text-align: right;
+                border-right: 1px solid $border-color;
+            }
+
+            .td-hours {
+                position: absolute;
+                top: -7px;
+                width: 70px;
+                right: 20px;
+            }
+
+            table th:last-child {
+                padding-left: 12px;
+            }
+
+            table td:last-child {
+                background-color: lighten($border-color, 10%);
+            }
+
+            tbody tr:last-child td:first-child {
+                height: 12px;
+            }
+            tbody tr:last-child td:last-child {
+                background-color: #fff;
+                border: 1px solid #fff;
+                height: 12px;
+            }
+
+            table tbody tr:last-child td:first-child {
+                border-bottom: 1px solid #fff;
+            }
+
+            .events-container {
+                position: absolute;
+                left: 13px;
+                top: 30px;
+                width: 100%;
+
+                .event-block {
+                    position: absolute;
+                    width: 98%;
+                    -webkit-border-radius: 3px;
+                    border-radius: 3px;
+                    background-color: $event-block-bg;
+                    border: 1px solid $event-block-border-color;
+                    padding: 0 10px;
+                    line-height: 1.3;
+                    color: $table-text-color;
+                    text-align: left;
+                    cursor: pointer;
+                    transition: all .2s;
+
+                    &:hover {
+                        background-color: lighten($event-block-bg, 3%);  
+                    }
+
+                    @media screen and (max-width: 767px) {
+                        width: 94%;
+                        padding: 0 8px;
+                    }
+
+                    @media screen and (max-width: 330px) {
+                        padding: 0 7px;
+                    }
+                    
+                    .event-title {
+                        font-size: 13px;
+                        font-weight: bold;
+                        margin-right: 7px;
+
+                        @media screen and (max-width: 330px) {
+                            margin-right: 6px;
+                        }
+                    }
+
+                    .event-time {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*----- Project Modal Box -----*/
+.modal-box {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .05);
+    display: flex;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1000;
+    padding: 25px 15px;
+
+    .modal-content {
+        position: relative;
+        margin: 0 auto;
+        padding: 30px;
+        width: 90%;
+        max-width: 500px;
+        font-size: 14px;
+        background: #fff;
+        background-clip: padding-box;
+        box-shadow: 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12), 0 11px 15px -7px rgba(0,0,0,.2);
+        border-radius: 8px;
+        transition: opacity .2s ease-in-out;
+
+        @media screen and (max-width: 600px) {
+            padding: 20px 15px;
+            width: 95%;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .15);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            font-size: 28px;
+            color: $text-color;
+            padding: 0;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            line-height: 39px;
+            cursor: pointer;
+            transition: all .5s;
+
+            &:hover {
+                background-color: lighten($border-color, 10%);;
+            }
+        }
+
+        .modal-event-title {
+            margin: 5px auto;
+            font-size: 20px;
+        }
+
+        .modal-event-time {
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+
+        .modal-event-address {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .more-info {
+            margin: 20px auto 15px;
+
+            p {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+
+
