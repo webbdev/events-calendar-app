@@ -3,7 +3,7 @@ This project was built using React.js
 
 "Events Blocks" are clickable with modal box.
 
-https://onedaycalendarevents.netlify.com/
+https://onedaycalendarevents.netlify.app/
 
 ### How to run
 1. git clone https://github.com/webbdev/events-calendar-app.git
